@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>L.F. 个人主页|抖音快手小姐姐</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="L.F. 个人主页|抖音快手小姐姐" />
+    <meta name="description" content="L.F. 个人主页|抖音快手小姐姐" />
+    <link rel="icon" type="image/ico" href="../favicon.png">
+    <script src="../js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<!-- <script type="text/javascript">
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        window.location.href = "index.html";
+    } else {
+        //    window.location.href = "pc.html";
+    }
+</script> -->
+
+
+<body>
+    <span style="position:absolute;top:15px;left:8vw;color:#fff;font-size:16px;">
+        <strong style="font-size:18px;">抖音快手小姐姐在线观看</strong> | 看见美好生活
+    </span>
+    <div class="app">
+        <div>
+            <video id="player" src="https://www.kuaidoushe.com/video.php" preload autoplay webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload"
+                poster=""></video>
+        </div>
+        <div class="box">
+            <div style="padding-top:0px;background-color:#0E0F1A;text-align:center;">
+                <img src="kc.jpg" style="border-radius:20px;width:200px;height:200px;">
+            </div>
+            <div style="padding-top:6px;;background-color:#0E0F1A;text-align:center;">
+                <button id="bth" class="xhbf">单视频循环播放</button>
+                <button class="next" onclick="players();">点这里再来一个</button>
+            </div>
+            <div style="padding-top:6px;padding-left:20px;padding-right:20px;background-color:#0E0F1A;text-align:center;">
+                <span style="color:#fff;">扫描下方二维码.使用手机播放</span><br><br>
+                <img src="2wm.png" style="width:200px;height:200px;"><br><br>
+                <a href="//wpa.qq.com/msgrd?v=3&uin=1138018467&site=qq&menu=yes" style="color:#fff;padding-left:12px;font-size:14px;text-decoration:none;">@L.F. (DisCartion)</a><br>
+                <a href="//lilililifeng.gitee.io/" style="color:#fff;padding-left:12px;font-size:14px;text-decoration:none;">https://lilililifeng.gitee.io/</a>
+            </div>
+        </div>
+    </div>
+    <div class="bom">
+        <div style="text-align: center;color:#fff;">
+            <strong>本程序仅作研究学习演示，视频采集自网络;原作者拍摄创作不易，请勿下载传播!</strong>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var auto = false;
+        var player = document.getElementById("player");
+
+        $("#bth").on("click", function() {
+            auto = !auto;
+            this.innerText = (auto ? '自动播放下一个' : '单视频循环播放');
+            this.className = (auto ? 'zdlb' : 'xhbf');
+        });
+
+        player.addEventListener('ended', function() {
+            console.log("播放结束");
+            if (auto == false) {
+                player.play();
+            } else {
+                players();
+            }
+        }, false);
+
+        var touchtime = new Date().getTime();
+        $("#player").on("click", function() {
+            if (new Date().getTime() - touchtime < 500) {
+                console.log("dblclick");
+                FullScreen();
+            } else {
+                touchtime = new Date().getTime();
+                console.log("click");
+                if (player.paused) {
+                    player.play();
+                } else {
+                    player.pause();
+                }
+            }
+        });
+    });
+
+    function players() {
+        {
+            document.getElementById("player").src = "http://www.kuaidoushe.com/video.php?";
+        }
+    }
+
+    //进入全屏
+    function FullScreen() {
+        if (player.requestFullscreen) {
+            player.requestFullscreen();
+            player.play();
+        } else if (player.mozRequestFullScreen) {
+            player.mozRequestFullScreen();
+            player.play();
+        } else if (player.webkitRequestFullScreen) {
+            player.webkitRequestFullScreen();
+            player.play();
+        }
+    }
+</script>
+
+</html>

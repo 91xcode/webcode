@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>下载界面</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/ico" href="../favicon.png">
+    <link rel="stylesheet" href="../css/main_old.css" />
+</head>
+<style>
+    ul.icons li a {
+        padding: 0px 0px 0px 0px;
+    }
+</style>
+
+<body class="is-loading">
+    <div id="wrapper">
+        <section id="main">
+            <header> <span class="avatar"> <img src="//q1.qlogo.cn/g?b=qq&nk=2687971403&s=640" alt="" /> </span>
+                <h1>下载地址</h1>
+                <form name="form1">
+                    <p text-align="center" style="background-color:#A39AE5;color:#FF0000">😉已经稳定运行 - <span id="htmer_time"></span>😉
+                    </p>
+                </form>
+            </header>
+            <div class="">
+                <ul class="icons">
+                    <li><a href="" title="首页">百度云</a></li>
+                    <li><a href="" title="lanzou盘">蓝奏盘</a></li>
+                    <li><a href="" title="加群了解更多">加群</a></li>
+                </ul>
+            </div>
+        </section>
+        <footer id="footer"> <span class="copyright" style="color:#000000"> Copyright © 2012-2021 <a
+          href="//lilililifeng.gitee.io/">L.F.</a> 版权所有</span> </footer>
+        <script>
+            if ('addEventListener' in window) {
+                window.addEventListener('load', function() {
+                    document.body.className = document.body.className.replace(/\bis-loading\b/, '')
+                });
+                document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '')
+            }
+        </script>
+        <script type="text/javascript" language="javascript">
+            function setTime() {
+                var create_time = Math.round(new Date(Date.UTC(2014, 3, 13, 12, 38, 0)).getTime() / 1000);
+                var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+                currentTime = secondToDate((timestamp - create_time));
+                currentTimeHtml = currentTime[0] + ' 年 ' + currentTime[1] + ' 天 ' + currentTime[2] + ' 时 ' + currentTime[3] + ' 分 ' + currentTime[4] + ' 秒';
+                document.getElementById("htmer_time").innerHTML = currentTimeHtml
+            }
+
+            function secondToDate(second) {
+                if (!second) {
+                    return 0
+                }
+                var time = new Array(0, 0, 0, 0, 0);
+                if (second >= 365 * 24 * 3600) {
+                    time[0] = parseInt(second / (365 * 24 * 3600));
+                    second %= 365 * 24 * 3600
+                }
+                if (second >= 24 * 3600) {
+                    time[1] = parseInt(second / (24 * 3600));
+                    second %= 24 * 3600
+                }
+                if (second >= 3600) {
+                    time[2] = parseInt(second / 3600);
+                    second %= 3600
+                }
+                if (second >= 60) {
+                    time[3] = parseInt(second / 60);
+                    second %= 60
+                }
+                if (second > 0) {
+                    time[4] = second
+                }
+                return time
+            }
+            setInterval(setTime, 1000);
+        </script>
+    </div>
+</body>
+
+</html>

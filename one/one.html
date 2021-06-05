@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <title>诗无尽头 - 唯有自由才能触摸虚无的自我</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #222;
+        }
+
+        .reveal {
+            position: relative;
+            display: flex;
+            color: white;
+            font-size: 3vmin;
+            font-family: Raleway, sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            white-space: pre;
+        }
+
+        .reveal span {
+            opacity: 0;
+            transform: scale(0);
+            animation: fadeIn 2.4s forwards;
+        }
+
+        .reveal::before,
+        .reveal::after {
+            position: absolute;
+            content: "";
+            top: 10%;
+            bottom: 0;
+            width: 2px;
+            height: 80%;
+            background: white;
+            opacity: 0;
+            transform: scale(0);
+            margin:0 -5px;
+        }
+
+        .reveal::before {
+            left: 50%;
+            animation: slideLeft 1.5s cubic-bezier(0.7, -0.6, 0.3, 1.5) forwards;
+        }
+
+        .reveal::after {
+            right: 50%;
+            animation: slideRight 1.5s cubic-bezier(0.7, -0.6, 0.3, 1.5) forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideLeft {
+            to {
+                left: -6%;
+                opacity: 1;
+                transform: scale(0.9);
+            }
+        }
+
+        @keyframes slideRight {
+            to {
+                right: -6%;
+                opacity: 1;
+                transform: scale(0.9);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal"></div>
+</body>
+<script>
+    // PS：如果觉得字体比较小，请修改 21 line 字体大小 请不要使用 px 否则将不会根据设备自动适配字体大小
+    // 调用一言接口鸡汤 start
+    var xhr = new XMLHttpRequest();
+    xhr.open("get","https://v1.hitokoto.cn");
+    xhr.send();
+    xhr.onreadystatechange = function(){
+        var contentText = "诗无尽头"; // 调用一言接口返回状态不正常的情况下会使用
+        var duration = 0.8;
+        var delay = 0.3;
+        var revealText = document.querySelector(".reveal");
+        var letters = contentText.split("");
+
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var str = JSON.parse(xhr.responseText);
+            document.querySelector(".reveal").innerHTML = str.hitokoto;
+            var letters = str.hitokoto.split("");
+        }
+
+        revealText.textContent = "";
+        var middle = letters.filter(function (e) { return e !== " "; }).length / 2;
+        letters.forEach(function (letter, i) {
+            var span = document.createElement("span");
+            span.textContent = letter;
+            span.style.animationDelay = delay + Math.abs(i - middle) * 0.1 + "s";
+            revealText.append(span);
+        });
+    }
+    // 调用一言接口鸡汤 end
+
+
+    // 自定义文字版 start
+    // var contentText = "诗无尽头 - 唯有自由才能触摸虚无的自我"; // 输入想展示的文字
+    // var duration = 0.8;
+    // var delay = 0.3;
+    // var revealText = document.querySelector(".reveal");
+    // var letters = contentText.split("");
+    // revealText.textContent = "";
+    // var middle = letters.filter(function (e) { return e !== " "; }).length / 2;
+    // letters.forEach(function (letter, i) {
+    //     var span = document.createElement("span");
+    //     span.textContent = letter;
+    //     span.style.animationDelay = delay + Math.abs(i - middle) * 0.1 + "s";
+    //     revealText.append(span);
+    // });
+    // 自定义文字版 end
+</script>
+</html>

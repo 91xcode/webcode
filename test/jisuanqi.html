@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>L.F. 个人主页|计算机教程|我的第一个程序-计算器</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="L.F. 个人主页|计算机教程|我的第一个程序-计算器" />
+    <meta name="description" content="L.F. 个人主页|计算机教程|我的第一个程序-计算器" />
+    <link rel="icon" type="image/ico" href="../favicon.png">
+    <link rel="stylesheet" href="../inc/index/css/main.css" />
+</head>
+<style>
+    ul.icons li a {
+        width: 330px;
+        font-size: 1px;
+        text-transform: none;
+        padding: 0px 0px 0px 0px;
+        text-align: center;
+    }
+    
+    div.mulu form p {
+        font-size: 20px;
+        margin: 0px 0px 0px 0px;
+        text-align: left;
+    }
+    
+    div.mulu form p.top {
+        background-color: #A39AE5;
+        color: #FF0000;
+    }
+</style>
+
+<script>
+    function yuanma() {
+        alert("你在想屁吃？真以为有源码下载？" + "\n" + "老老实实写代码去！")
+    }
+</script>
+
+<body class="is-loading">
+    <div id="wrapper">
+        <section id="main" style="width: 1200px;">
+            <header> <span class="avatar"> <img src="https://q1.qlogo.cn/g?b=qq&amp;nk=1138018467&amp;s=640" alt="" /></span>
+            </header>
+            <div class="mulu">
+                <ul class="icons" style="text-align: center;">
+                    <li><a href="index.html" title="索引首页">索引首页</a></li>
+                    <li><a style="color: crimson;" href="http://mtfz88.imwork.net:23333/jisuanqi/我的第一个程序-计算器.exe">成品下载-照抄这个界面或者自己设计界面</a></li>
+                    <li><a style="color: rgb(140, 0, 255);" onclick="yuanma()"> 源码下载-你可以下载下来复制粘贴变成你的</a></li>
+                    <h1>我的第一个程序-计算器</h1>
+                </ul>
+            </div>
+            <!-- 1.完善界面 -->
+            <div class="mulu">
+                <form name="01-1.完善界面">
+                    <p class="top">&emsp;&emsp;1.完善界面</p>
+                    <p style="color:#000000;">
+                        &emsp;&emsp;首先讲的是界面。
+                        <br>&emsp;&emsp;开发软件的情况下我们可能无需操心界面的问题，只需要随心所欲放置组件比如：按钮、编辑框、对话框等等。
+                        <br>&emsp;&emsp;但实际呈现给用户的界面不可能是这种乱糟糟的，比如下面这张图：
+                        <br>&emsp;&emsp;<img src="img/1.png" alt="">
+                        <br>&emsp;&emsp;所以界面至关重要(<a style="color: crimson;">当然也不是很重要，你可以等后期再去修改。但是开发过程中界面整齐简介明了一点可以省下很多事，比如某东西看一眼你就知道他是什么了</a>)
+                        <br>&emsp;&emsp;首先第一件事，给对应的组件命名，这样代码一眼就能明白。比如以下两张图的对比：
+                        <br>&emsp;&emsp;<img src="img/2.png" alt=""><img src="img/3.png" alt="">
+                        <br>&emsp;&emsp;这样对比一下左右两侧的代码是不是发现右侧组件命名后更清晰明了呢？
+                        <br>&emsp;&emsp;那接下来就告诉你如何命名组件的名字。
+                        <br>&emsp;&emsp;首先选中一个组件，如左侧图片所示，左侧属性面板里，箭头所指的位置第一项[<a style="color: crimson;">名称</a>]就是组件的名字啦。我们将重命名为[<a style="color: crimson;">按钮_这是一个按钮</a>]按下[<a style="color: crimson;">enter</a>]即[<a style="color: crimson;">回车键</a>]就可以了，如右侧图示:
+                        <br>&emsp;&emsp;<img src="img/4.png" alt=""><img src="img/5.png" alt="">
+                        <br>&emsp;&emsp;其他组件命名同理，这里就不一一所示了。注意一点，命名方式尽量简单明了，最好养成习惯，比如[<a style="color: crimson;">组件名_命名</a>]。如[<a style="color: crimson;">标签_程序说明、选择框_记住账号、超文本浏览框_网页引用说明、按钮_保存内容</a>]。
+                        <br>&emsp;&emsp;然后我们讲一下界面组件的排列顺序。依旧取第一张图来示例：
+                        <br>&emsp;&emsp;<img src="img/1.png" alt="">
+                        <br>&emsp;&emsp;这里我们对他进行一些排列，得到如下图示：
+                        <br>&emsp;&emsp;<img src="img/6.png" alt="">
+                        <br>&emsp;&emsp;是不是更整齐一些了呢，这里我们就要讲到利用[<a style="color: crimson;">shift</a>]键选中多个组件然后[<a style="color: crimson;">右键鼠标 位置及尺寸</a>]这一操作了。
+                        <br>&emsp;&emsp;<img src="img/7.png" alt="">
+                        <br>&emsp;&emsp;按住[<a style="color: crimson;">shift</a>]键选中多个组件后我们就可以选择自己想要的对齐方式了，这里不详细讲解
+                        <br>&emsp;&emsp;<a style="color: rgb(195, 0, 255);">PS1：真没什么可讲的，字面意思，操作一下就知道了</a>
+                        <br>&emsp;&emsp;<a style="color: rgb(195, 0, 255);">PS2：注意按住[<a style="color: crimson;">shift</a>]</a><a style="color: rgb(195, 0, 255);">才可以选中多个组件，中途松掉后只会选择最后一个你选择的组件，并且鼠标右键时候必须在选中的任一组件范围内才行</a>
+                        <br>&emsp;&emsp;PS3：真没了。看下一节内容吧。
+                    </p>
+                </form>
+            </div>
+            <!-- 2.计算器基础功能实现 -->
+            <div class="mulu">
+                <form name="02-2.计算器基础功能实现">
+                    <p class="top">&emsp;&emsp;2.计算器基础功能实现</p>
+                    <p style="color:#000000;">
+                        &emsp;&emsp;老规矩，先上界面，你照抄或者自行设计界面都可以。
+                        <br>&emsp;&emsp;<img src="img/8.png" alt="">
+                        <br>&emsp;&emsp;功能不多。其中应用到了
+                        <br>&emsp;&emsp;1.[<a style="color: crimson;">编辑框.获取焦点 ()</a>]判断上方两个编辑框是否输入了数字，如果没有输入就弹出信息框提示并激活对应未输入内容的编辑框
+                        <br>&emsp;&emsp;2.[<a style="color: crimson;">标签.标题 ＝ “+/-/×/÷”</a>]下方四个符号按钮用来更改两个编辑框中间的标签的显示。如图所示：
+                        <br>&emsp;&emsp;<img src="img/+.png" alt=""><img src="img/-.png" alt="">
+                        <br>&emsp;&emsp;<img src="img/×.png" alt=""><img src="img/÷.png" alt="">
+                        <br>&emsp;&emsp;3.
+                        <br>&emsp;&emsp;<a style="color: rgb(195, 0, 255);">PS1：没有3了，你还指望有更多提示？</a>
+                        <br>&emsp;&emsp;<a style="color: rgb(195, 0, 255);">PS2：最上面有成品和源码下载，你不会没发现吧？不会吧不会吧不会吧？</a>
+                        <br>&emsp;&emsp;<a style="color: rgb(195, 0, 255);">PS3：功能演示。</a>
+                        <br>&emsp;&emsp;<video src="http://mtfz88.imwork.net:23333/jisuanqi/1.mp4" controls="controls" preload="auto"></video>
+
+                    </p>
+                </form>
+            </div>
+            <!-- 3.计算器高级功能实现 -->
+            <div class="mulu">
+                <form name="03-3.计算器高级功能实现">
+                    <p class="top">&emsp;&emsp;3.计算器高级功能实现</p>
+                    <p style="color:#000000;">
+                        &emsp;&emsp;先把上面学完再说。
+                    </p>
+                </form>
+            </div>
+            <!-- 4.换皮操作？给计算器换个好看的界面吧 -->
+            <div class="mulu">
+                <form name="04-4.换皮操作？给计算器换个好看的界面吧">
+                    <p class="top">&emsp;&emsp;4.换皮操作？给计算器换个好看的界面吧</p>
+                    <p style="color:#000000;">
+                        &emsp;&emsp;楼上说的对。
+                    </p>
+                </form>
+            </div>
+            <!-- 5.骚操作！在计算器上加上数字键盘 -->
+            <div class="mulu">
+                <form name="05-5.骚操作！在计算器上加上数字键盘">
+                    <p class="top">&emsp;&emsp;5.骚操作！在计算器上加上数字键盘</p>
+                    <p style="color:#000000;">
+                        &emsp;&emsp;三楼四楼说得对。
+                    </p>
+                </form>
+            </div>
+            <!-- 6.进阶操作！让计算器有更多的功能 -->
+            <div class="mulu">
+                <form name="06-6.进阶操作！让计算器有更多的功能">
+                    <p class="top">&emsp;&emsp;6.进阶操作！让计算器有更多的功能</p>
+                    <p style="color:#000000;">
+                        &emsp;&emsp;我觉得六楼是对的。还有，网页背景音乐贼好听。
+                    </p>
+                </form>
+            </div>
+            <!-- 7.终极蛇皮怪！给计算器加上登录验证吧 -->
+            <div class="mulu">
+                <form name="07-7.终极蛇皮怪！给计算器加上登录验证吧">
+                    <p class="top">&emsp;&emsp;7.终极蛇皮怪！给计算器加上登录验证吧</p>
+                    <p style="color:#000000;">
+                        &emsp;&emsp;恕我直言，上面的各位都是垃圾。
+                    </p>
+                </form>
+            </div>
+        </section>
+        <!-- footer信息 -->
+        <footer id="footer"> <span class="copyright" style="color:#000000"> Copyright © 2012-2020 <a
+          href="http://lilililifeng.gitee.io/">L.F.</a> 版权所有</span> </footer>
+        <script>
+            if ('addEventListener' in window) {
+                window.addEventListener('load', function() {
+                    document.body.className = document.body.className.replace(/\bis-loading\b/, '')
+                });
+                document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '')
+            }
+        </script>
+    </div>
+    <!--音乐-->
+    <embed src="../inc/audio/千里邀明月.mp3" autostart="true" loop="true" hidden="true" width="0" height="0">
+</body>
+
+</html>
