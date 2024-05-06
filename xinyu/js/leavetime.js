@@ -12,7 +12,7 @@ function leavetime() {
     var todayHour = today.getHours()
     var todayMinute = today.getMinutes()
     var todaySecond = today.getSeconds()
-    var t1 = Date.UTC(2023, 06, 02, 19, 20, 12)
+    var t1 = Date.UTC(2023, 08, 17, 19, 20, 12)
     var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
     var diff = t2 - t1
     var diffYears = Math.floor(diff / years)
