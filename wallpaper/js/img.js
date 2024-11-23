@@ -1,4 +1,4 @@
-var seting = { apiUrl: "https://api.vvhan.com/api/360wallpaperApi.php", ratio: 0.618, types: '360new', downApi: 'https://image.baidu.com/search/down?tn=download&word=download&ie=utf8&fr=detail&url=' };
+var seting = { apiUrl: "https://oiapi.net/API/Wallpaper360", ratio: 0.618, types: '360new', downApi: 'https://image.baidu.com/search/down?tn=download&word=download&ie=utf8&fr=detail&url=' };
 var jigsaw = { count: 0, halfHtml: '', loadBig: false, ajaxing: false };
 window.onresize = function() { resizeHeight() };
 window.onload = function() {
