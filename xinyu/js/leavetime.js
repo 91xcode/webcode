@@ -21,7 +21,7 @@ function leavetime() {
     var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
     var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
         minutes) / seconds)
-    document.getElementById("leavetime").innerHTML = "玉玉已经离开我" + diffYears + "年" + diffDays + "天" +
-        diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒啦"
+    document.getElementById("leavetime").innerHTML = "玉玉已经离开我 [" + diffYears + "年" + diffDays + "天" +
+        diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒] 啦"
 }
 leavetime()
