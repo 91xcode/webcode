@@ -1,33 +1,473 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh">
+<!-- Rayforward 自制 -->
 <head>
-    <title>PoE-ArchnemTree中文汉化版 - BY:哀愁酱丶</title>
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义辛迪加速查表</title>
+    <h2>GP Rayforward自制</h2>
+    <h3>图片资源来自poewiki.net和poedb.tw</h3>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #393846;
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 80px;
+            height: 100px;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s;
+            text-align: center;
+            user-select: none; /* 防止用户选中 */
+        }
+
+        td:hover {
+            cursor: pointer;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+
+        .Images-Head {
+        width: 60px;
+        height: 60px;
+        }
+
+        .Images-Item {
+        width: 40px;
+        height: 40px;
+        }
+
+        .p1 {
+        color: white;
+        font-size: 16px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        }
+
+        .p2 {
+        color: white;
+        font-size: 14px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        }
+
+        .p3 {
+        color: white;
+        font-size: 10px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        }
+
+        h1 {
+        color: white;
+        }
+        
+    </style>
 </head>
 
 <body>
+    <h1>自定义辛迪加速查表</h1>
+    <table>
+        <tbody>
+            <tr><!-- 第一行 -->
+                <td>
+                    <img src="./images/syndicate-cheatsheet-dark-slices_01.png" class="Images-Head">
+                </td>
+                <td class="clickable">
+                    <img src="./images/Aisling.png" class="Images-Head">
+                    <p class="p1">爱斯林</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Cameria.png" class="Images-Head">
+                    <p class="p2">卡美利亚</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Elreon.png" class="Images-Head">
+                    <p class="p2">艾尔雷恩</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Gravicius.png" class="Images-Head">
+                    <p class="p2">格拉维奇</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Guff.png" class="Images-Head">
+                    <p class="p1">古夫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Haku.png" class="Images-Head">
+                    <p class="p1">哈库</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Hillock.png" class="Images-Head">
+                    <p class="p1">西拉克</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/It_That_Fled.png" class="Images-Head">
+                    <p class="p1">逃逸怪</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Janus.png" class="Images-Head">
+                    <p class="p1">杨纳斯</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Jorgin.png" class="Images-Head">
+                    <p class="p1">尤尔金</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Korell.png" class="Images-Head">
+                    <p class="p1">克雷尔</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Leo.png" class="Images-Head">
+                    <p class="p1">里奥</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Riker.png" class="Images-Head">
+                    <p class="p1">莱克</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Rin.png" class="Images-Head">
+                    <p class="p1">麟</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Tora.png" class="Images-Head">
+                    <p class="p1">托拉</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Vagan.png" class="Images-Head">
+                    <p class="p1">瓦甘</p>
+                </td>
+                <td class="clickable">
+                    <img src="./images/Vorici.png" class="Images-Head">
+                    <p class="p1">瓦里西</p>
+                </td>
+            </tr>
+            <tr><!-- 第二行 -->
+                <td>
+                    <img src="./images/Transportation.webp" class="Images-Head">
+                    <p class="p1">运输部</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">双隐匿稀有</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">赛季传奇</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">传奇武器</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Divination_card_inventory_icon.png" class="Images-Item">
+                    <p class="p2">整叠命运卡</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Currency_Craft_icon.png" class="Images-Item">
+                    <p class="p2">通货做装</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">稀有物品</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Essence_Scarab_of_Calcification_inventory_icon.png" class="Images-Item">
+                    <p class="p2">限时拿势力装</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Splinter_of_Chayula_inventory_icon.png" class="Images-Item">
+                    <p class="p2">裂隙碎片</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Gemcutter's_Prism_inventory_icon.png" class="Images-Item">
+                    <p class="p2">品质通货</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestTalisman.webp" class="Images-Item">
+                    <p class="p1">魔符</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestEssence.webp" class="Images-Item">
+                    <p class="p1">精华</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Abrasive_Catalyst_inventory_icon.png" class="Images-Item">
+                    <p class="p1">穿越圣甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestCurrency.webp" class="Images-Item">
+                    <p class="p2">传奇装备</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Academy_Map_(Affliction)_inventory_icon.png" class="Images-Item">
+                    <p class="p2">普通地图</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestGems.webp" class="Images-Item">
+                    <p class="p2">限时挑选</p>
+                    <p class="p2">技能宝石</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Timeless_Eternal_Empire_Splinter_inventory_icon.png" class="Images-Item">
+                    <p class="p2">永恒裂片</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">随机50次孔色/孔数/链接</p>
+                </td>
+            </tr>
+            <tr><!-- 第三行 -->
+                <td>
+                    <img src="./images/Fortification.webp" class="Images-Head">
+                    <p class="p1">防卫部</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">隐匿通货做装</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Harbinger's_Orb_inventory_icon.png" class="Images-Item">
+                    <p class="p1">先驱石</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">传奇护甲</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestDivination.webp" class="Images-Item">
+                    <p class="p1">命运卡</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Essence_Craft_icon.png" class="Images-Item">
+                    <p class="p2">精华做装</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Strongbox.webp" class="Images-Item">
+                    <p class="p1">保险箱</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardScarabs.webp" class="Images-Item">
+                    <p class="p2">势力崇高做装</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Desert_Map_(Affliction)_inventory_icon.png" class="Images-Item">
+                    <p class="p2">额外裂隙</p>
+                    <p class="p2">附魔地图</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Exalted_Shard_inventory_icon.png" class="Images-Item">
+                    <p class="p2">通货碎片</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/BestiaryLegendaryBeast.webp" class="Images-Item">
+                    <p class="p2">兽之势装备</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Mortal_Set_inventory_icon.png" class="Images-Item">
+                    <p class="p2">地图碎片</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestCurrency.webp" class="Images-Item">
+                    <p class="p1">双瓦传奇陷阱宝箱</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestUnique.webp" class="Images-Item">
+                    <p class="p2">限时挑选</p>
+                    <p class="p2">传奇</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Desert_Map_(Affliction)_inventory_icon.png" class="Images-Item">
+                    <p class="p2">稀有地图</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestGems.webp" class="Images-Item">
+                    <p class="p3">品质宝石</p>
+                    <p class="p3">T3时</p>
+                    <p class="p3">21-23品</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">军团箱子</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Orb_of_Fusing_inventory_icon.png" class="Images-Item">
+                    <p class="p2">插槽相关通货</p>
+                </td>
+            </tr>
+            <tr><!-- 第四行 -->
+                <td>
+                    <img src="./images/Research.webp" class="Images-Head">
+                    <p class="p1">科研部</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Beyond_Scarab_of_the_Invasion_inventory_icon.png" class="Images-Item">
+                    <p class="p2">隐匿混沌做装</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Orb_of_Unmaking_inventory_icon.png" class="Images-Item">
+                    <p class="p1">粉碎石</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">传奇首饰</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Card_Swap.png" class="Images-Item">
+                    <p class="p2">命运卡转换</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Exalted_Annulment_Craft.png" class="Images-Item">
+                    <p class="p2">崇高/剥离</p>
+                    <p class="p2">做装</p>
+                </td>
+                <td class="clickable">
+                    <p class="p2">品质稀有物品</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Anarchy_Scarab_of_Partnership_inventory_icon.png" class="Images-Item">
+                    <p class="p2">混乱甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Breachstone-Map_Device.png" class="Images-Item">
+                    <p class="p2">裂隙石</p>
+                    <p class="p2">地图工艺</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Astragali_inventory_icon.png" class="Images-Item">
+                    <p class="p2">先祖秘藏</p>
+                    <p class="p2">刷新通货</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Ritual_Scarab_of_Recognition_inventory_icon.png" class="Images-Item">
+                    <p class="p2">驱灵甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestFossil.webp" class="Images-Item">
+                    <p class="p1">化石</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestGeneric.webp" class="Images-Item">
+                    <p class="p2">自己双瓦传奇</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/RewardChestGeneric.webp" class="Images-Item">
+                    <p class="p3">远古石做装</p>
+                    <p class="p3">传奇</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/The_Coward's_Trial_inventory_icon.png" class="Images-Item">
+                    <p class="p2">传奇地图</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/PCMapArrow.webp" class="Images-Item">
+                    <p class="p3">宝石经验</p>
+                    <p class="p3">二千万/七千万/两亿</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Diviner's_Incubator_inventory_icon.png" class="Images-Item">
+                    <p class="p2">孕育石</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Harvest_Scarab_of_Cornucopia_inventory_icon.png" class="Images-Item">
+                    <p class="p2">庄园甲虫</p>
+                </td>
+            </tr>
+            <tr><!-- 第五行 -->
+                <td>
+                    <img src="./images/Transportation.webp" class="Images-Head">
+                    <p class="p1">运输部</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Gilded_Torment_Scarab_inventory_icon.png" class="Images-Item">
+                    <p class="p2">罪魂甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Gilded_Sulphite_Scarab_inventory_icon.png" class="Images-Item">
+                    <p class="p2">亚硫酸甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Gilded_Reliquary_Scarab_inventory_icon.png" class="Images-Item">
+                    <p class="p2">传奇甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Divination_Scarab_of_Completion_inventory_icon.png" class="Images-Item">
+                    <p class="p2">命运卡甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Incursion_Scarab_of_Timelines_inventory_icon.png" class="Images-Item">
+                    <p class="p2">穿越甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Ambush_Scarab_of_Discernment_inventory_icon.png" class="Images-Item">
+                    <p class="p2">伏击甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Abyss_Scarab_of_Emptiness_inventory_icon.png" class="Images-Item">
+                    <p class="p2">深渊甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Breach_Scarab_of_Snares_inventory_icon.png" class="Images-Item">
+                    <p class="p2">裂隙甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Expedition_Scarab_of_Archaeology_inventory_icon.png" class="Images-Item">
+                    <p class="p2">先祖甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Bestiary_Scarab_of_the_Shadowed_Crow_inventory_icon.png" class="Images-Item">
+                    <p class="p2">野兽甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Influencing_Scarab_of_Conversion_inventory_icon.png" class="Images-Item">
+                    <p class="p2">势力甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Ultimatum_Scarab_of_Inscription_inventory_icon.png" class="Images-Item">
+                    <p class="p2">贪婪甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Blight_Scarab_of_Blooming_inventory_icon.png" class="Images-Item">
+                    <p class="p2">泰坦甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Cartography_Scarab_of_Duplication_inventory_icon.png" class="Images-Item">
+                    <p class="p2">制图甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Harbinger_Scarab_of_Warhoards_inventory_icon.png" class="Images-Item">
+                    <p class="p2">先驱甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Legion_Scarab_of_Eternal_Conflict_inventory_icon.png" class="Images-Item">
+                    <p class="p2">军团甲虫</p>
+                </td>
+                <td class="clickable">
+                    <img src="./item_images/Delirium_Scarab_of_Delusions_inventory_icon.png" class="Images-Item">
+                    <p class="p2">迷雾甲虫</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-    <div id="header">
-        <label>
-			<input type="checkbox" id="doDeepUsage">PoE-ArchnemTree中文汉化版 - BY:哀愁酱丶 - 项目原地址https://kukuminer.github.io/PoE-ArchnemTree/
-		</label>
-    </div>
-    <div id="main">
-        <svg height="100%" width="100%" id="svgContainer" style="opacity: 1;">
-			<defs style="opacity: 1;">
-				<marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="3" markerUnits="strokeWidth" orient="auto" style="opacity: 1;">
-					<path d="M0,0 L0,6 L9,3 z" fill="#ffffff" style="opacity: 1;"></path>
-				</marker>
-			</defs>
-		</svg>
-        <div id="boxRows">
-            <!-- rows go here -->
-        </div>
-    </div>
+    <script>
+        const clickableElements = document.querySelectorAll('.clickable');
+
+        clickableElements.forEach(element => {
+            element.addEventListener('click', function() {
+                changeColor(this);
+            });
+        });
+
+        function changeColor(cell) {
+            const colors = ["green", "rgb(118, 16, 16)", "rgb(57, 56, 70)"];
+            const currentColor = cell.style.backgroundColor;
+            const currentIndex = colors.indexOf(currentColor);
+            const nextIndex = (currentIndex + 1) % colors.length;
+            cell.style.backgroundColor = colors[nextIndex];
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh">
+<!-- Rayforward 自制 -->
+<!-- 
+    表格结构说明：
+    - 第1行：辛迪加成员头像和名称
+    - 第2行：运输部(Transportation)奖励
+    - 第3行：防卫部(Fortification)奖励
+    - 第4行：科研部(Research)奖励
+    - 第5行：甲虫奖励
+    
+    列对应成员(从左到右):
+    1: 爱斯林(Aisling)
+    2: 卡美利亚(Cameria)
+    3: 艾尔雷恩(Elreon)
+    4: 格拉维奇(Gravicius)
+    5: 古夫(Guff)
+    6: 哈库(Haku)
+    7: 西拉克(Hillock)
+    8: 逃逸怪(It_That_Fled)
+    9: 杨纳斯(Janus)
+    10: 尤尔金(Jorgin)
+    11: 克雷尔(Korell)
+    12: 里奥(Leo)
+    13: 莱克(Riker)
+    14: 麟(Rin)
+    15: 托拉(Tora)
+    16: 瓦甘(Vagan)
+    17: 瓦里西(Vorici)
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义辛迪加速查表</title>
+    <h2>GP Rayforward自制</h2>
+    <h3>图片资源来自poewiki.net和poedb.tw</h3>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #393846;
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 80px;
+            height: 100px;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s;
+            text-align: center;
+            user-select: none; /* 防止用户选中 */
+            position: relative;
+        }
+
+        td:hover {
+            cursor: pointer;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+
+        .Images-Head {
+        width: 60px;
+        height: 60px;
+        }
+
+        .Images-Item {
+        width: 40px;
+        height: 40px;
+        }
+
+        .p1 {
+        color: white;
+        font-size: 16px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        }
+
+        .p2 {
+        color: white;
+        font-size: 14px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        }
+
+        .p3 {
+        color: white;
+        font-size: 10px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        }
+
+        h1 {
+        color: white;
+        }
+
+        h2 {
+        color: white;
+        }
+
+        h3 {
+        color: white;
+        }
+        
+        /* 调试用 - 显示单元格坐标 */
+        .debug-coord {
+            display: none;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: rgba(255,255,255,0.5);
+            font-size: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>自定义辛迪加速查表</h1>
+    
+    <!-- 主表格 -->
+    <table>
+        <tbody>
+            <!-- 第一行 - 成员行 -->
+            <tr data-row-type="members">
+                <td data-row="1" data-col="0">
+                    <img src="./images/syndicate-cheatsheet-dark-slices_01.png" class="Images-Head">
+                    <div class="debug-coord">1,0</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="1" data-member="aisling">
+                    <img src="./images/Aisling.png" class="Images-Head">
+                    <p class="p1">爱斯林</p>
+                    <div class="debug-coord">1,1</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="2" data-member="cameria">
+                    <img src="./images/Cameria.png" class="Images-Head">
+                    <p class="p2">卡美利亚</p>
+                    <div class="debug-coord">1,2</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="3" data-member="elreon">
+                    <img src="./images/Elreon.png" class="Images-Head">
+                    <p class="p2">艾尔雷恩</p>
+                    <div class="debug-coord">1,3</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="4" data-member="gravicius">
+                    <img src="./images/Gravicius.png" class="Images-Head">
+                    <p class="p2">格拉维奇</p>
+                    <div class="debug-coord">1,4</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="5" data-member="guff">
+                    <img src="./images/Guff.png" class="Images-Head">
+                    <p class="p1">古夫</p>
+                    <div class="debug-coord">1,5</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="6" data-member="haku">
+                    <img src="./images/Haku.png" class="Images-Head">
+                    <p class="p1">哈库</p>
+                    <div class="debug-coord">1,6</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="7" data-member="hillock">
+                    <img src="./images/Hillock.png" class="Images-Head">
+                    <p class="p1">西拉克</p>
+                    <div class="debug-coord">1,7</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="8" data-member="it_that_fled">
+                    <img src="./images/It_That_Fled.png" class="Images-Head">
+                    <p class="p1">逃逸怪</p>
+                    <div class="debug-coord">1,8</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="9" data-member="janus">
+                    <img src="./images/Janus.png" class="Images-Head">
+                    <p class="p1">杨纳斯</p>
+                    <div class="debug-coord">1,9</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="10" data-member="jorgin">
+                    <img src="./images/Jorgin.png" class="Images-Head">
+                    <p class="p1">尤尔金</p>
+                    <div class="debug-coord">1,10</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="11" data-member="korell">
+                    <img src="./images/Korell.png" class="Images-Head">
+                    <p class="p1">克雷尔</p>
+                    <div class="debug-coord">1,11</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="12" data-member="leo">
+                    <img src="./images/Leo.png" class="Images-Head">
+                    <p class="p1">里奥</p>
+                    <div class="debug-coord">1,12</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="13" data-member="riker">
+                    <img src="./images/Riker.png" class="Images-Head">
+                    <p class="p1">莱克</p>
+                    <div class="debug-coord">1,13</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="14" data-member="rin">
+                    <img src="./images/Rin.png" class="Images-Head">
+                    <p class="p1">麟</p>
+                    <div class="debug-coord">1,14</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="15" data-member="tora">
+                    <img src="./images/Tora.png" class="Images-Head">
+                    <p class="p1">托拉</p>
+                    <div class="debug-coord">1,15</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="16" data-member="vagan">
+                    <img src="./images/Vagan.png" class="Images-Head">
+                    <p class="p1">瓦甘</p>
+                    <div class="debug-coord">1,16</div>
+                </td>
+                <td class="clickable" data-row="1" data-col="17" data-member="vorici">
+                    <img src="./images/Vorici.png" class="Images-Head">
+                    <p class="p1">瓦里西</p>
+                    <div class="debug-coord">1,17</div>
+                </td>
+            </tr>
+            
+            <!-- 第二行 - 运输部奖励 -->
+            <tr data-row-type="rewards" data-dept="transportation">
+                <td data-row="2" data-col="0">
+                    <img src="./images/Transportation.webp" class="Images-Head">
+                    <p class="p1">运输部</p>
+                    <div class="debug-coord">2,0</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="1" data-member="aisling">
+                    <img src="./item_images/Double-Veiled-item.png" class="Images-Head">
+                    <p class="p2">双隐匿稀有</p>
+                    <div class="debug-coord">2,1</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="2" data-member="cameria">
+                    <img src="./item_images/Abyss_Scarab_of_Emptiness_inventory_icon.png" class="Images-Item">
+                    <p class="p2">深渊甲虫</p>
+                    <div class="debug-coord">2,2</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="3" data-member="elreon">
+                    <img src="./item_images/RewardChestFragment.webp" class="Images-Item">
+                    <p class="p1">碎片</p>
+                    <div class="debug-coord">2,3</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="4" data-member="gravicius">
+                    <img src="./item_images/Divination_card_inventory_icon.png" class="Images-Item">
+                    <p class="p2">整叠命运卡</p>
+                    <div class="debug-coord">2,4</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="5" data-member="guff">
+                    <img src="./item_images/Chaos_Orb_inventory_icon.png" class="Images-Item">
+                    <p class="p1">通货</p>
+                    <div class="debug-coord">2,5</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="6" data-member="haku">
+                    <img src="./item_images/Strongbox.webp" class="Images-Item">
+                    <p class="p2">传奇保险箱</p>
+                    <div class="debug-coord">2,6</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="7" data-member="hillock">
+                    <img src="./item_images/RewardChestGeneric.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">势力装</p>
+                    <div class="debug-coord">2,7</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="8" data-member="it_that_fled">
+                    <img src="./item_images/Desert_Map_(Affliction)_inventory_icon.png" class="Images-Item">
+                    <p class="p2">裂隙</p>
+                    <p class="p2">腐化地图</p>
+                    <div class="debug-coord">2,8</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="9" data-member="janus">
+                    <img src="./item_images/CurrencyCoin.webp" class="Images-Item">
+                    <p class="p1">金币堆</p>
+                    <div class="debug-coord">2,9</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="10" data-member="jorgin">
+                    <img src="./item_images/GreaterScarabSulphite.webp" class="Images-Item">
+                    <p class="p2">亚硫酸甲虫</p>
+                    <div class="debug-coord">2,10</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="11" data-member="korell">
+                    <img src="./item_images/Anarchy_Scarab_of_Partnership_inventory_icon.png" class="Images-Item">
+                    <p class="p2">混乱甲虫</p>
+                    <div class="debug-coord">2,11</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="12" data-member="leo">
+                    <img src="./item_images/Tier4ScarabIncursion.webp" class="Images-Item">
+                    <p class="p2">穿越圣甲虫</p>
+                    <div class="debug-coord">2,12</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="13" data-member="riker">
+                    <img src="./item_images/RewardChestUnique.webp" class="Images-Item">
+                    <p class="p1">传奇装</p>
+                    <div class="debug-coord">2,13</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="14" data-member="rin">
+                    <img src="./item_images/Academy_Map_(Affliction)_inventory_icon.png" class="Images-Item">
+                    <p class="p2">地图通货</p>
+                    <div class="debug-coord">2,14</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="15" data-member="tora">
+                    <img src="./item_images/RewardChestGems.webp" class="Images-Item">
+                    <p class="p2">品质宝石/</p>
+                    <p class="p2">经验棱镜</p>
+                    <div class="debug-coord">2,15</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="16" data-member="vagan">
+                    <img src="./item_images/Harbinger_Scarab_of_Warhoards_inventory_icon.png" class="Images-Item">
+                    <p class="p2">先驱甲虫</p>
+                    <div class="debug-coord">2,16</div>
+                </td>
+                <td class="clickable" data-row="2" data-col="17" data-member="vorici">
+                    <img src="./item_images/RewardChestCurrency.webp" class="Images-Item">
+                    <p class="p1">堆叠通货</p>
+                    <div class="debug-coord">2,17</div>
+                </td>
+            </tr>
+            
+            <!-- 第三行 - 防卫部奖励 -->
+            <tr data-row-type="rewards" data-dept="fortification">
+                <td data-row="3" data-col="0">
+                    <img src="./images/Fortification.webp" class="Images-Head">
+                    <p class="p1">防卫部</p>
+                    <div class="debug-coord">3,0</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="1" data-member="aisling">
+                    <img src="./item_images/VeiledExaltedOrb.webp" class="Images-Item">
+                    <p class="p2">隐匿崇高</p>
+                    <p class="p2">做装</p>
+                    <div class="debug-coord">3,1</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="2" data-member="cameria">
+                    <img src="./item_images/Large_Cluster_Jewel_inventory_icon.png" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">星团珠宝</p>
+                    <div class="debug-coord">3,2</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="3" data-member="elreon">
+                    <img src="./item_images/RewardChestGeneric.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">腐化装备</p>
+                    <div class="debug-coord">3,3</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="4" data-member="gravicius">
+                    <img src="./item_images/RewardChestDivination.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">命运卡</p>
+                    <div class="debug-coord">3,4</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="5" data-member="guff">
+                    <img src="./item_images/RewardChestGeneric.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">稀有装备</p>
+                    <div class="debug-coord">3,5</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="6" data-member="haku">
+                    <img src="./item_images/Tier4ScarabDomination.webp" class="Images-Item">
+                    <p class="p1">支配甲虫</p>
+                    <div class="debug-coord">3,6</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="7" data-member="hillock">
+                    <img src="./item_images/ShaperExaltedOrb.webp" class="Images-Item">
+                    <p class="p2">影响装备</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">3,7</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="8" data-member="it_that_fled">
+                    <img src="./item_images/Breachstone-Map_Device.png" class="Images-Item">
+                    <p class="p2">裂隙石</p>
+                    <p class="p2">地图工艺</p>
+                    <div class="debug-coord">3,8</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="9" data-member="janus">
+                    <img src="./item_images/GreaterScarabSettlers.webp" class="Images-Item">
+                    <p class="p2">卡古兰甲虫</p>
+                    <div class="debug-coord">3,9</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="10" data-member="jorgin">
+                    <img src="./item_images/RewardChestGeneric.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">矿坑装</p>
+                    <div class="debug-coord">3,10</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="11" data-member="korell">
+                    <img src="./item_images/RewardChestGeneric.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">精华装</p>
+                    <div class="debug-coord">3,11</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="12" data-member="leo">
+                    <img src="./item_images/RewardChestUnique.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">腐化传奇装</p>
+                    <div class="debug-coord">3,12</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="13" data-member="riker">
+                    <img src="./item_images/RewardChestUnique.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">传奇</p>
+                    <div class="debug-coord">3,13</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="14" data-member="rin">
+                    <img src="./item_images/The_Coward's_Trial_inventory_icon.png" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">传奇地图</p>
+                    <div class="debug-coord">3,14</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="15" data-member="tora">
+                    <img src="./item_images/RewardChestGems.webp" class="Images-Item">
+                    <p class="p2">限时取</p>
+                    <p class="p2">技能宝石</p>
+                    <div class="debug-coord">3,15</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="16" data-member="vagan">
+                    <img src="./item_images/Mysterious_Incubator_inventory_icon.png" class="Images-Item">
+                    <p class="p2">测试孕育石</p>
+                    <p class="p2">的极限</p>
+                    <div class="debug-coord">3,16</div>
+                </td>
+                <td class="clickable" data-row="3" data-col="17" data-member="vorici">
+                    <img src="./item_images/Orb_of_Fusing_inventory_icon.png" class="Images-Item">
+                    <p class="p2">孔色链</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">3,17</div>
+                </td>
+            </tr>
+            
+            <!-- 第四行 - 科研部奖励 -->
+            <tr data-row-type="rewards" data-dept="research">
+                <td data-row="4" data-col="0">
+                    <img src="./images/Research.webp" class="Images-Head">
+                    <p class="p1">科研部</p>
+                    <div class="debug-coord">4,0</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="1" data-member="aisling">
+                    <img src="./item_images/VeiledChaosOrb.webp" class="Images-Item">
+                    <p class="p2">隐匿混沌</p>
+                    <p class="p2">做装</p>
+                    <div class="debug-coord">4,1</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="2" data-member="cameria">
+                    <img src="./item_images/Cobalt_Jewel_inventory_icon.png" class="Images-Item">
+                    <p class="p2">珠宝工艺台</p>
+                    <div class="debug-coord">4,2</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="3" data-member="elreon">
+                    <img src="./item_images/HellscapeJewellersOrb.webp" class="Images-Item">
+                    <p class="p2">腐化工艺台</p>
+                    <div class="debug-coord">4,3</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="4" data-member="gravicius">
+                    <img src="./item_images/Card_Swap.png" class="Images-Item">
+                    <p class="p2">命运卡转换</p>
+                    <div class="debug-coord">4,4</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="5" data-member="guff">
+                    <img src="./item_images/CraftingUnlockObject.webp" class="Images-Item">
+                    <p class="p2">混合工艺台</p>
+                    <div class="debug-coord">4,5</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="6" data-member="haku">
+                    <img src="./item_images/ShaperExaltedOrb.webp" class="Images-Item">
+                    <p class="p2">影响工艺台</p>
+                    <div class="debug-coord">4,6</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="7" data-member="hillock">
+                    <img src="./item_images/红蓝.png" class="Images-Item">
+                    <p class="p2">红蓝装备</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">4,7</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="8" data-member="it_that_fled">
+                    <img src="./item_images/HellscapeJewellersOrb.webp" class="Images-Item">
+                    <p class="p2">腐化孔</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">4,8</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="9" data-member="janus">
+                    <img src="./item_images/CurrencyCoin.webp" class="Images-Item">
+                    <p class="p2">金币买传奇</p>
+                    <div class="debug-coord">4,9</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="10" data-member="jorgin">
+                    <img src="./item_images/Ashscale_Talisman_inventory_icon.png" class="Images-Item">
+                    <p class="p2">魔符工艺台</p>
+                    <div class="debug-coord">4,10</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="11" data-member="korell">
+                    <img src="./item_images/RewardChestEssence.webp" class="Images-Item">
+                    <p class="p1">精华</p>
+                    <div class="debug-coord">4,11</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="12" data-member="leo">
+                    <img src="./item_images/SuperVaal.webp" class="Images-Item">
+                    <p class="p2">巨灵腐化</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">4,12</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="13" data-member="riker">
+                    <img src="./item_images/AncientOrb.webp" class="Images-Item">
+                    <p class="p2">远古石做装</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">4,13</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="14" data-member="rin">
+                    <img src="./item_images/Academy_Map_(Affliction)_inventory_icon.png" class="Images-Item">
+                    <p class="p2">地图工艺台</p>
+                    <div class="debug-coord">4,14</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="15" data-member="tora">
+                    <img src="./item_images/CraftingUnlockObject.webp" class="Images-Item">
+                    <p class="p2">宝石工艺台</p>
+                    <div class="debug-coord">4,15</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="16" data-member="vagan">
+                    <img src="./item_images/Chaos_Fracturing.png" class="Images-Item">
+                    <p class="p2">混沌锁词</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">4,16</div>
+                </td>
+                <td class="clickable" data-row="4" data-col="17" data-member="vorici">
+                    <img src="./item_images/Chance_Scouring.png" class="Images-Item">
+                    <p class="p2">机会重铸</p>
+                    <p class="p2">工艺台</p>
+                    <div class="debug-coord">4,17</div>
+                </td>
+            </tr>
+            
+            <!-- 第五行 - 甲虫奖励 -->
+            <tr data-row-type="rewards" data-dept="scarabs">
+                <td data-row="5" data-col="0">
+                    <img src="./images/Intervention.webp" class="Images-Head">
+                    <p class="p1">调停部</p>
+                    <div class="debug-coord">5,0</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="1" data-member="aisling">
+                    <img src="./item_images/Gilded_Torment_Scarab_inventory_icon.png" class="Images-Item">
+                    <p class="p2">罪魂甲虫</p>
+                    <div class="debug-coord">5,1</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="2" data-member="cameria">
+                    <img src="./item_images/Delirium_Scarab_of_Delusions_inventory_icon.png" class="Images-Item">
+                    <p class="p2">迷雾甲虫</p>
+                    <div class="debug-coord">5,2</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="3" data-member="elreon">
+                    <img src="./item_images/Tier4ScarabBeyond.webp" class="Images-Item">
+                    <p class="p2">超越甲虫</p>
+                    <div class="debug-coord">5,3</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="4" data-member="gravicius">
+                    <img src="./item_images/Divination_Scarab_of_Completion_inventory_icon.png" class="Images-Item">
+                    <p class="p2">命运卡甲虫</p>
+                    <div class="debug-coord">5,4</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="5" data-member="guff">
+                    <img src="./item_images/AltTier4ScarabBlight.webp" class="Images-Item">
+                    <p class="p2">菌潮甲虫</p>
+                    <div class="debug-coord">5,5</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="6" data-member="haku">
+                    <img src="./item_images/Ambush_Scarab_of_Discernment_inventory_icon.png" class="Images-Item">
+                    <p class="p2">伏击甲虫</p>
+                    <div class="debug-coord">5,6</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="7" data-member="hillock">
+                    <img src="./item_images/Influencing_Scarab_of_Conversion_inventory_icon.png" class="Images-Item">
+                    <p class="p2">影响甲虫</p>
+                    <div class="debug-coord">5,7</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="8" data-member="it_that_fled">
+                    <img src="./item_images/Breach_Scarab_of_Snares_inventory_icon.png" class="Images-Item">
+                    <p class="p2">裂隙甲虫</p>
+                    <div class="debug-coord">5,8</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="9" data-member="janus">
+                    <img src="./item_images/Expedition_Scarab_of_Archaeology_inventory_icon.png" class="Images-Item">
+                    <p class="p2">先祖甲虫</p>
+                    <div class="debug-coord">5,9</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="10" data-member="jorgin">
+                    <img src="./item_images/Bestiary_Scarab_of_the_Shadowed_Crow_inventory_icon.png" class="Images-Item">
+                    <p class="p2">野兽甲虫</p>
+                    <div class="debug-coord">5,10</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="11" data-member="korell">
+                    <img src="./item_images/Essence_Scarab_of_Calcification_inventory_icon.png" class="Images-Item">
+                    <p class="p2">精华甲虫</p>
+                    <div class="debug-coord">5,11</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="12" data-member="leo">
+                    <img src="./item_images/Ultimatum_Scarab_of_Inscription_inventory_icon.png" class="Images-Item">
+                    <p class="p2">贪婪甲虫</p>
+                    <div class="debug-coord">5,12</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="13" data-member="riker">
+                    <img src="./item_images/Blight_Scarab_of_Blooming_inventory_icon.png" class="Images-Item">
+                    <p class="p2">泰坦甲虫</p>
+                    <div class="debug-coord">5,13</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="14" data-member="rin">
+                    <img src="./item_images/Cartography_Scarab_of_Duplication_inventory_icon.png" class="Images-Item">
+                    <p class="p2">制图甲虫</p>
+                    <div class="debug-coord">5,14</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="15" data-member="tora">
+                    <img src="./item_images/Ritual_Scarab_of_Recognition_inventory_icon.png" class="Images-Item">
+                    <p class="p2">驱灵甲虫</p>
+                    <div class="debug-coord">5,15</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="16" data-member="vagan">
+                    <img src="./item_images/Legion_Scarab_of_Eternal_Conflict_inventory_icon.png" class="Images-Item">
+                    <p class="p2">军团甲虫</p>
+                    <div class="debug-coord">5,16</div>
+                </td>
+                <td class="clickable" data-row="5" data-col="17" data-member="vorici">
+                    <img src="./item_images/Harvest_Scarab_of_Cornucopia_inventory_icon.png" class="Images-Item">
+                    <p class="p2">庄园甲虫</p>
+                    <div class="debug-coord">5,17</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const clickableElements = document.querySelectorAll('.clickable');
+
+        clickableElements.forEach(element => {
+            element.addEventListener('click', function() {
+                changeColor(this);
+            });
+        });
+
+        function changeColor(cell) {
+            const colors = ["green", "rgb(118, 16, 16)", "rgb(57, 56, 70)"];
+            const currentColor = cell.style.backgroundColor;
+            const currentIndex = colors.indexOf(currentColor);
+            const nextIndex = (currentIndex + 1) % colors.length;
+            cell.style.backgroundColor = colors[nextIndex];
+        }
+        
+        // 调试功能 - 显示单元格坐标
+        function toggleDebugMode() {
+            const debugElements = document.querySelectorAll('.debug-coord');
+            debugElements.forEach(el => {
+                el.style.display = el.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+        
+        // 按Ctrl+D切换调试模式
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'q') {
+                toggleDebugMode();
+            }
+        });
+    </script>
+</body>
+</html>
